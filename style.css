@@ -33,3 +33,12 @@ h3 {
 .Me {
   color: blue;
 }
+
+.education {
+  margin: 1rem;
+  border-bottom: 1px solid black;
+}
+.work {
+  margin: 1rem;
+  border-bottom: 1px solid black;
+}
