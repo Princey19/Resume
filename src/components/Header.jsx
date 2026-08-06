@@ -25,7 +25,7 @@ function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-accent transition duration-300"
+                className="text-accent hover:text-gray-300 transition duration-300"
               >
                 {link.label}
               </a>

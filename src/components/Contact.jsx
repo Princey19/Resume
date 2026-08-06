@@ -1,23 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const WEB3FORMS_ACCESS_KEY = "1ef316ae-7c4d-48e4-8fff-757020d1ae7d";
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
 function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [status, setStatus] = useState({ state: "idle", message: "" }); // idle | sending | success | error
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  // Auto-hide the success/error message 5 seconds after it appears
+  useEffect(() => {
+    if (status.state !== "success" && status.state !== "error") return;
+
+    const timer = setTimeout(() => {
+      setStatus({ state: "idle", message: "" });
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [status.state]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!WEB3FORMS_ACCESS_KEY) {
+      setStatus({
+        state: "error",
+        message:
+          "Contact form isn't configured yet. Please reach out via WhatsApp or email instead.",
+      });
+      return;
+    }
+
     setStatus({ state: "sending", message: "" });
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           subject: "New message from your portfolio site",
@@ -132,8 +160,8 @@ function Contact() {
                 status.state === "success"
                   ? "bg-green-900/50 text-green-300"
                   : status.state === "error"
-                  ? "bg-red-900/50 text-red-300"
-                  : ""
+                    ? "bg-red-900/50 text-red-300"
+                    : ""
               }`}
             >
               {status.message}

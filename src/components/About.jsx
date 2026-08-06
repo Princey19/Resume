@@ -13,14 +13,16 @@ function About() {
               My Background
             </h3>
             <p className="text-accent mb-4">
-              I've transformed complex business requirements into elegant,
-              efficient, and scalable software solutions. My journey spans from
-              front-end user experience to robust back-end architecture.
+              I build internal tools for a music distribution company in Nigeria
+              — full-stack apps that automate catalog management,
+              cross-reference YouTube data against release records, and cut
+              hours of manual spreadsheet work down to minutes.
             </p>
             <p className="text-accent">
-              I thrive in collaborative environments and am constantly learning
-              new technologies to stay ahead of the curve. Let's build something
-              amazing together!
+              I split my time between shipping React/Node.js tools and running
+              social media and content strategy for music artists and sports
+              accounts, so I care as much about whether a tool actually gets
+              used as whether it's technically clean.
             </p>
           </div>
 

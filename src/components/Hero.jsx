@@ -1,4 +1,3 @@
-import profilePic from "../assets/images/myPicture.jpg";
 import profilePic2 from "../assets/images/pic2.jpg";
 
 function Hero() {
@@ -12,7 +11,7 @@ function Hero() {
           <div className="w-48 h-40 rounded-full overflow-hidden border-4  shadow-2xl transition duration-500 hover:scale-105">
             <img
               src={profilePic2}
-              alt="Profile Picture Placeholder"
+              alt="Opuiyo Prince-Emmanuel"
               className="w-full h-full object-cover"
             />
           </div>

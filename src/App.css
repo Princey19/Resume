@@ -491,6 +491,9 @@
 .hover\:text-accent:hover {
   color: var(--color-primary-dark);
 }
+.hover\:text-gray-300:hover {
+  color: var(--color-gray-300);
+}
 .hover\:text-sky-300:hover {
   color: var(--color-sky-300);
 }

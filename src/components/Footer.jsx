@@ -31,7 +31,7 @@ function Footer() {
           </a>
         </div>
         <p id="current-year" className="text-gray-500 text-sm">
-          &copy; {currentYear} opuiyo prince.
+          &copy; {currentYear} Opuiyo Prince-Emmanuel.
         </p>
       </div>
     </footer>
